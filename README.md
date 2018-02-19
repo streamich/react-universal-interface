@@ -39,15 +39,15 @@ class ChildWithData extends {
 
 This library allows you to create universal interface components using these two functions:
 
-- `renderChildren(props, data)`
+- `render(props, data)`
 - `createEnhancer(Comp, propName)`
 
-First, in your render method use `renderChildren`:
+First, in your render method use `render()`:
 
 ```js
 class MyData extends Component {
     render () {
-        return renderChildren(this.props, data);
+        return render(this.props, data);
     }
 }
 ```
@@ -71,8 +71,28 @@ npm i <a href="https://www.npmjs.com/package/react-universal-interface">react-un
 ## Usage
 
 ```js
-import {renderChildren, createEnhancer} from 'react-universal-interface';
+import {render, createEnhancer} from 'react-universal-interface';
 ```
+
+
+## Reference
+
+### `render(props, data)`
+
+- `props` &mdash; props of your component.
+- `data` &mdash; data you want to provide to your users, usually this will be `this.state`.
+
+
+### `createEnhancer(Facc, propName)`
+
+- `Facc` &mdash; FaCC component to use when creating enhancer.
+- `propName` &mdash; prop name to use when injecting FaCC data into a component.
+
+Returns a component enhancer `enhancer(Comp, propName, faccProps)` that receives three arguments.
+
+- `Comp` &mdash; required, component to be enhanced.
+- `propName` &mdash; optional, string, name of the injected prop.
+- `faccProps` &mdash; optional, props to provide to the FaCC component.
 
 
 ## License

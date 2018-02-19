@@ -1,13 +1,13 @@
 import {createElement as h} from 'react';
 import {renderToString} from 'react-dom/server';
 import {expect} from 'chai';
-import renderChildren from '../renderChildren';
+import render from '../render';
 
-const Parent = (props) => renderChildren(props, {foo: 'bar'});
+const Parent = (props) => render(props, {foo: 'bar'});
 
-describe('renderChildren() SSR', () => {
+describe('render() SSR', () => {
     it('exists and does not crash', () => {
-        expect(typeof renderChildren).to.equal('function');
+        expect(typeof render).to.equal('function');
     });
 
     it('renders as expected', () => {

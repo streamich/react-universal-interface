@@ -1,10 +1,10 @@
 import {createElement as h} from 'react';
 import {renderToString} from 'react-dom/server';
 import {expect} from 'chai';
-import renderChildren from '../renderChildren';
+import render from '../render';
 import createEnhancer from '../createEnhancer';
 
-const Parent = (props) => renderChildren(props, {foo: 'bar'});
+const Parent = (props) => render(props, {foo: 'bar'});
 const withParent = createEnhancer(Parent, 'parent');
 
 describe('createEnhancer() SSR', () => {

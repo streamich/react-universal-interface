@@ -1,9 +1,9 @@
 import {createElement as h, Component} from 'react';
-import renderChildren from '../renderChildren';
+import render from '../render';
 import createEnhancer from '../createEnhancer';
 import {mount} from 'enzyme';
 
-const Parent = (props) => renderChildren(props, {foo: 'bar' + (props.extra || '')});
+const Parent = (props) => render(props, {foo: 'bar' + (props.extra || '')});
 const withParent = createEnhancer(Parent, 'parent');
 
 @withParent

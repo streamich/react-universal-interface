@@ -1,12 +1,12 @@
 import {createElement as h} from 'react';
-import renderChildren from '../renderChildren';
+import render from '../render';
 import {mount} from 'enzyme';
 
-const Parent = (props) => renderChildren(props, {foo: 'bar'});
+const Parent = (props) => render(props, {foo: 'bar'});
 
-describe('renderChildren()', () => {
+describe('render()', () => {
     it('exists', () => {
-        expect(typeof renderChildren).toBe('function');
+        expect(typeof render).toBe('function');
     });
 
     it('renders without crashing', () => {

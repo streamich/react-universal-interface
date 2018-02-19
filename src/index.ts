@@ -1,7 +1,7 @@
-import renderChildren from './renderChildren';
+import render from './render';
 import createEnhancer from './createEnhancer';
 
 export {
-    renderChildren,
+    render,
     createEnhancer,
 };
