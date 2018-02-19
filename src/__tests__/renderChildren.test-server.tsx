@@ -10,7 +10,7 @@ describe('renderChildren() SSR', () => {
         expect(typeof renderChildren).to.equal('function');
     });
 
-    it('exists and does not crash', () => {
+    it('renders as expected', () => {
         const html = renderToString(
             <Parent>
                 <div>foobar</div>

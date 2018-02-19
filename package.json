@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/streamich/react-universal-children.git"
+    "url": "https://github.com/streamich/react-universal-interface.git"
   },
   "scripts": {
     "build": "npm run clean && gulp --gulpfile build/gulpfile.js build-ts && gulp --gulpfile build/gulpfile.js build-modules",
