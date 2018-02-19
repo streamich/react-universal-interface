@@ -1,3 +1,4 @@
+import {createElement as h} from 'react';
 import {expect} from 'chai';
 import renderChildren from '../renderChildren';
 

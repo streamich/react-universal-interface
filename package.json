@@ -64,6 +64,9 @@
     },
     "transformIgnorePatterns": [],
     "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
+    "setupFiles": [
+      "./src/__tests__/setup.js"
+    ],
     "reporters": [
       "jest-tap-reporter"
     ],
