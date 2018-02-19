@@ -70,8 +70,6 @@ npm i <a href="https://www.npmjs.com/package/react-universal-interface">react-un
 
 ## Usage
 
-Import each utility individually to decrease your bundle size
-
 ```js
 import {renderChildren, createEnhancer} from 'react-universal-interface';
 ```
