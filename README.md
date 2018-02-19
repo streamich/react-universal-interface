@@ -2,19 +2,45 @@
 
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
 
-A `<Parent>` component that supports **universal component interface** provides all the following usage patters:
+Given a `<MyData>` component, it is said to follow **universal component interface** if, and only if, it supports
+all the below usage patterns:
 
-- FaCC &mdash; `<Parent>{(state) => <Child {...state} />}</Parent>`
-- `render` prop &mdash; `<Parent render={(state) => <Child {...state} />} />`
-- `component` prop &mdash; `<Parent component={Child} />` and `<Parent comp={Child} />`
-- Prop injection &mdash; `<Parent><Child /></Parent>`
-- `withState()` HOC
-- `@withState` decorator
+```jsx
+// FaCC
+<MyData>{
+    (data) => <Child {...data} />
+}</MyData>
 
-This library allows you to create components all the above interfaces.
+// Render prop
+<MyData render={
+    (data) => <Child {...data} />
+} />
 
-- `renderChildren`
-- `createEnhancer`
+// Component prop
+<MyData component={Child} />
+<MyData comp={Child} />
+
+// Prop injection
+<MyData>
+    <Child />
+</MyData>
+
+// Higher Order Component
+const ChildWitData = withData(Child);
+
+// Decorator
+@withData
+class ChildWithData extends {
+    render () {
+        return <Child {...this.props.data} />;
+    }
+}
+```
+
+This library allows you to create universal interface components using these two functions:
+
+- `renderChildren(props, data)`
+- `createEnhancer(Comp, propName)`
 
 First, in your render method use `renderChildren`:
 
