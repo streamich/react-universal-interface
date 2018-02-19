@@ -75,6 +75,26 @@ import {render, createEnhancer} from 'react-universal-interface';
 ```
 
 
+## Reference
+
+### `render(props, data)`
+
+- `props` &mdash; props of your component.
+- `data` &mdash; data you want to provide to your users, usually this will be `this.state`.
+
+
+### `createEnhancer(Facc, propName)`
+
+- `Facc` &mdash; FaCC component to use when creating enhancer.
+- `propName` &mdash; prop name to use when injecting FaCC data into a component.
+
+Returns a component enhancer `enhancer(Comp, propName, faccProps)` that receives three arguments.
+
+- `Comp` &mdash; required, component to be enhanced.
+- `propName` &mdash; optional, string, name of the injected prop.
+- `faccProps` &mdash; optional, props to provide to the FaCC component.
+
+
 ## License
 
 [Unlicense](./LICENSE) &mdash; public domain.
