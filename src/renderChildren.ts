@@ -1,4 +1,4 @@
-import {createElement as h, cloneElement} from 'react';
+import {createElement as h, cloneElement, version} from 'react';
 
 const isFn = fn => typeof fn === 'function';
 
@@ -35,11 +35,13 @@ const renderChildren = (props, state) => {
             }
         }
 
-        return comp(state);
+        return h(comp, state);
     }
 
     if (children instanceof Array) {
-        return h('div', null, ...children);
+        const isReact16 = version[1] === '6';
+
+        return isReact16 ? children : h('div', null, ...children);
     }
 
     if (children && (children instanceof Object)) {

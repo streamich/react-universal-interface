@@ -51,13 +51,13 @@ describe('renderChildren()', () => {
         let wrapper = mount(<Parent component={MyComp} />);
 
         expect(MyComp).toHaveBeenCalledTimes(1);
-        expect(MyComp).toHaveBeenCalledWith({foo: 'bar'});
+        expect(MyComp.mock.calls[0][0]).toEqual({foo: 'bar'});
         expect(wrapper.html()).toBe('<div>bar</div>');
 
         wrapper = mount(<Parent comp={MyComp} />);
 
         expect(MyComp).toHaveBeenCalledTimes(2);
-        expect(MyComp).toHaveBeenCalledWith({foo: 'bar'});
+        expect(MyComp.mock.calls[1][0]).toEqual({foo: 'bar'});
         expect(wrapper.html()).toBe('<div>bar</div>');
     });
 
@@ -80,5 +80,36 @@ describe('renderChildren()', () => {
             baz: 'bazooka',
         });
         expect(wrapper.html()).toBe('<div>bar and bazooka</div>');
+    });
+
+    it('renders array of children', () => {
+        const wrapper = mount(
+            <div>
+                <Parent>
+                    <div key='foo'>foo</div>
+                    <div key='bar'>bar</div>
+                </Parent>
+            </div>
+        );
+
+        expect(wrapper.html()).toBe('<div><div>foo</div><div>bar</div></div>');
+    });
+
+    it('renders other types', () => {
+        let wrapper = mount(
+            <div>
+                <Parent>{1}</Parent>
+            </div>
+        );
+
+        expect(wrapper.html()).toBe('<div>1</div>');
+
+        wrapper = mount(
+            <div>
+                <Parent>foobar</Parent>
+            </div>
+        );
+
+        expect(wrapper.html()).toBe('<div>foobar</div>');
     });
 });
