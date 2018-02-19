@@ -1,13 +1,17 @@
 # react-universal-interface
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] ![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
 
 Use this badge if you support universal interface:
 
-![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)
+<div align="center">
+    <a href="https://github.com/streamich/react-universal-interface">
+        <img src="https://img.shields.io/badge/React-Universal%20Interface-green.svg" />
+    </a>
+</div>
 
-```shell
-![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)
+```
+[![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
 ```
 
 
