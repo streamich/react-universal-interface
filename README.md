@@ -1,6 +1,22 @@
 # react-universal-interface
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+
+Use this badge if you support universal interface:
+
+<div align="center">
+    <a href="https://github.com/streamich/react-universal-interface">
+        <img src="https://img.shields.io/badge/React-Universal%20Interface-green.svg" />
+    </a>
+</div>
+
+```
+[![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
+```
+
+
+---
+
 
 Given a `<MyData>` component, it is said to follow **universal component interface** if, and only if, it supports
 all the below usage patterns:
