@@ -6,7 +6,7 @@ Given a `<MyData>` component, it is said to follow **universal component interfa
 all the below usage patterns:
 
 ```jsx
-// FaCC
+// Function as a Child Component (FaCC)
 <MyData>{
     (data) => <Child {...data} />
 }</MyData>
@@ -25,7 +25,7 @@ all the below usage patterns:
     <Child />
 </MyData>
 
-// Higher Order Component
+// Higher Order Component (HOC)
 const ChildWitData = withData(Child);
 
 // Decorator
