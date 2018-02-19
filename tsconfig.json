@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "removeComments": true,
+    "noImplicitAny": false,
+    "sourceMap": false,
+    "outDir": "./lib",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es5",
+      "es6",
+      "es7",
+      "es2015",
+      "scripthost",
+      "dom.iterable"
+    ]
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "src/__tests__",
+    "*.test.ts",
+    "*.test.tsx",
+    "*.test-server.ts",
+    "*.test-server.tsx"
+  ]
+}

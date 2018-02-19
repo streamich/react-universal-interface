@@ -1,0 +1,89 @@
+{
+  "name": "react-universal-children",
+  "version": "0.0.1",
+  "description": "Universal Children Definition for React Components",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/streamich/react-universal-children.git"
+  },
+  "scripts": {
+    "build": "npm run clean && gulp --gulpfile build/gulpfile.js build-ts && gulp --gulpfile build/gulpfile.js build-modules",
+    "clean": "rimraf lib modules",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "mocha -r ts-node/register src/**/*.test-server.ts*",
+    "test:client": "jest",
+    "test:client:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "semantic-release": "semantic-release"
+  },
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/chai": "4.1.1",
+    "@types/jest": "22.0.1",
+    "@types/node": "9.3.0",
+    "@types/react": "16.0.36",
+    "chai": "4.1.2",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "3.3.0",
+    "gulp": "3.9.1",
+    "gulp-typescript": "3",
+    "jest": "22.1.2",
+    "jest-environment-jsdom": "^22.1.4",
+    "jest-environment-jsdom-global": "^1.0.3",
+    "jest-tap-reporter": "1.9.0",
+    "mocha": "5.0.0",
+    "mol-conventional-changelog": "1.2.0",
+    "react-test-renderer": "16.2.0",
+    "rimraf": "2.6.2",
+    "ts-jest": "22.0.1",
+    "ts-node": "4.1.0",
+    "typescript": "2.6.2",
+    "semantic-release": "^12.2.4",
+    "react": "^16.2.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/mol-conventional-changelog"
+    }
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [],
+    "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
+    "setupFiles": [
+      "./src/__tests__/setup.js"
+    ],
+    "reporters": [
+      "jest-tap-reporter"
+    ],
+    "testEnvironment": "jest-environment-jsdom-global"
+  },
+  "keywords": [
+    "react",
+    "universal",
+    "children",
+    "definition",
+    "ucd",
+    "universal-children",
+    "facc",
+    "render",
+    "prop",
+    "function",
+    "child",
+    "component"
+  ]
+}
