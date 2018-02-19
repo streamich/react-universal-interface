@@ -39,15 +39,15 @@ class ChildWithData extends {
 
 This library allows you to create universal interface components using these two functions:
 
-- `renderChildren(props, data)`
+- `render(props, data)`
 - `createEnhancer(Comp, propName)`
 
-First, in your render method use `renderChildren`:
+First, in your render method use `render()`:
 
 ```js
 class MyData extends Component {
     render () {
-        return renderChildren(this.props, data);
+        return render(this.props, data);
     }
 }
 ```
@@ -71,7 +71,7 @@ npm i <a href="https://www.npmjs.com/package/react-universal-interface">react-un
 ## Usage
 
 ```js
-import {renderChildren, createEnhancer} from 'react-universal-interface';
+import {render, createEnhancer} from 'react-universal-interface';
 ```
 
 
