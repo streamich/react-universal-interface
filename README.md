@@ -1,6 +1,18 @@
 # react-universal-interface
 
-[![][npm-badge]][npm-url] [![][travis-badge]][travis-url]
+[![][npm-badge]][npm-url] [![][travis-badge]][travis-url] ![React Universal Interface][https://img.shields.io/badge/React-Universal%20Interface-green.svg]
+
+Use this badge if you support universal interface:
+
+![React Universal Interface][https://img.shields.io/badge/React-Universal%20Interface-green.svg]
+
+```shell
+![React Universal Interface][https://img.shields.io/badge/React-Universal%20Interface-green.svg]
+```
+
+
+---
+
 
 Given a `<MyData>` component, it is said to follow **universal component interface** if, and only if, it supports
 all the below usage patterns:
