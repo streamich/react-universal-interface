@@ -50,6 +50,40 @@ describe('createEnhancer()', () => {
             });
             expect(wrapper.html()).toBe('<div>bar</div>');
         });
+
+        it('can customize prop name', () => {
+            const MyComp: any = jest.fn();
+
+            MyComp.mockImplementation(({custom}) => <div>{custom.foo}</div>);
+
+            const MyCompEnhanced = withParent(MyComp, 'custom');
+            const wrapper = mount(<MyCompEnhanced />);
+
+            expect(MyComp).toHaveBeenCalledTimes(1);
+            expect(MyComp.mock.calls[0][0]).toEqual({
+                custom: {
+                    foo: 'bar'
+                }
+            });
+            expect(wrapper.html()).toBe('<div>bar</div>');
+        });
+
+        it('can customize prop name', () => {
+            const MyComp: any = jest.fn();
+
+            MyComp.mockImplementation(({custom}) => <div>{custom.foo}</div>);
+
+            const MyCompEnhanced = withParent(MyComp, 'custom', {extra: '.bit'});
+            const wrapper = mount(<MyCompEnhanced />);
+
+            expect(MyComp).toHaveBeenCalledTimes(1);
+            expect(MyComp.mock.calls[0][0]).toEqual({
+                custom: {
+                    foo: 'bar.bit'
+                }
+            });
+            expect(wrapper.html()).toBe('<div>bar.bit</div>');
+        });
     });
 
     describe('decorator', () => {

@@ -1,19 +1,28 @@
 import {createElement as h, cloneElement, version} from 'react';
 
+const isReact16Plus = parseInt(version.substr(0, version.indexOf('.'))) > 15;
 const isFn = fn => typeof fn === 'function';
 
-const renderChildren = (props, state) => {
+const renderChildren = (props, data) => {
     if (process.env.NODE_ENV !== 'production') {
         if (typeof props !== 'object') {
-            throw new TypeError('renderProp(props, data) first argument must be a prop object.');
+            throw new TypeError('renderChildren(props, data) first argument must be a props object.');
         }
 
         const {children, render} = props;
 
         if (isFn(children) && isFn(render)) {
             console.warn(
-                'Both "render" and "children" are specified for a render-prop component. ' +
+                'Both "render" and "children" are specified for in a universal interface component. ' +
                 'Children will be used.'
+            );
+            console.trace();
+        }
+
+        if (typeof data !== 'object') {
+            console.warn(
+                'Universal component interface normally expects data to be an object, ' +
+                `"${typeof data}" received.`
             );
             console.trace();
         }
@@ -21,50 +30,43 @@ const renderChildren = (props, state) => {
 
     const {render, children = render, component, comp = component} = props;
 
-    if (isFn(children)) {
-        return children(state);
-    }
+    if (isFn(children)) return children(data);
 
     if (comp) {
         if (process.env.NODE_ENV !== 'production') {
             if (!isFn(comp)) {
                 throw new TypeError(
                     'Universal children definition expected "comp" or "component" prop ' +
-                    `to be a React component type, received typeof "${typeof comp}".`
+                    `to be of a React component type, received typeof "${typeof comp}".`
                 );
             }
         }
 
-        return h(comp, state);
+        return h(comp, data);
     }
 
-    if (children instanceof Array) {
-        const isReact16 = version[1] === '6';
-
-        return isReact16 ? children : h('div', null, ...children);
-    }
+    if (children instanceof Array)
+        return isReact16Plus ? children : h('div', null, ...children);
 
     if (children && (children instanceof Object)) {
         if (process.env.NODE_ENV !== 'production') {
-            if ((typeof children.type !== 'function') && (typeof children.type !== 'function')) {
+            if (!children.type || ((typeof children.type !== 'string') && (typeof children.type !== 'function'))) {
                 console.warn(
-                    'Universal children definition received object as child, ' +
-                    'expected React component, but could not find `type` attribute.'
+                    'Universal component interface received object as children, ' +
+                    'expected React element, but received unexpected React "type".'
                 );
                 console.trace();
             }
 
-            if (typeof children.type === 'string') {
+            if (typeof children.type === 'string')
                 return children;
-            }
 
-            return cloneElement(children, Object.assign({}, children.props, state));
+            return cloneElement(children, Object.assign({}, children.props, data));
         } else {
-            if (typeof children.type === 'string') {
+            if (typeof children.type === 'string')
                 return children;
-            }
 
-            Object.assign(children.props, state);
+            Object.assign(children.props, data);
 
             return children;
         }
