@@ -1,5 +1,5 @@
 {
-  "name": "react-universal-children",
+  "name": "react-universal-interface",
   "version": "0.0.1",
   "description": "Universal Children Definition for React Components",
   "main": "lib/index.js",
@@ -27,6 +27,7 @@
     "@types/jest": "22.0.1",
     "@types/node": "9.3.0",
     "@types/react": "16.0.36",
+    "@types/react-dom": "16.0.4",
     "chai": "4.1.2",
     "enzyme": "3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
@@ -45,7 +46,8 @@
     "ts-node": "4.1.0",
     "typescript": "2.6.2",
     "semantic-release": "^12.2.4",
-    "react": "^16.2.0"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "config": {
     "commitizen": {
@@ -75,6 +77,7 @@
   "keywords": [
     "react",
     "universal",
+    "interface",
     "children",
     "definition",
     "ucd",

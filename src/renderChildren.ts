@@ -46,16 +46,24 @@ const renderChildren = (props, state) => {
 
     if (children && (children instanceof Object)) {
         if (process.env.NODE_ENV !== 'production') {
-            if (typeof children['$$typeof'] !== 'function') {
+            if ((typeof children.type !== 'function') && (typeof children.type !== 'function')) {
                 console.warn(
                     'Universal children definition received object as child, ' +
-                    'expected React component, but could not find `$$typeof` attribute.'
+                    'expected React component, but could not find `type` attribute.'
                 );
                 console.trace();
             }
 
+            if (typeof children.type === 'string') {
+                return children;
+            }
+
             return cloneElement(children, Object.assign({}, children.props, state));
         } else {
+            if (typeof children.type === 'string') {
+                return children;
+            }
+
             Object.assign(children.props, state);
 
             return children;

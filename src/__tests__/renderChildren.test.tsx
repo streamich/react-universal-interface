@@ -41,7 +41,7 @@ describe('renderChildren()', () => {
         expect(wrapper.html()).toBe('<div>bar</div>');
     });
 
-    it('supports componet prop interface', () => {
+    it('supports component prop interface', () => {
         const MyComp = jest.fn();
 
         MyComp.mockImplementation((state) => {
@@ -80,6 +80,16 @@ describe('renderChildren()', () => {
             baz: 'bazooka',
         });
         expect(wrapper.html()).toBe('<div>bar and bazooka</div>');
+    });
+
+    it('does not inject prop into DOM elements', () => {
+        const wrapper = mount(
+            <Parent>
+                <div>foobar</div>
+            </Parent>
+        );
+
+        expect(wrapper.html()).toBe('<div>foobar</div>');
     });
 
     it('renders array of children', () => {
