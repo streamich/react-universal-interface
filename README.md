@@ -14,7 +14,7 @@ A `<Parent>` component that supports **universal component interface** provides 
 This library allows you to create components all the above interfaces.
 
 - `renderChildren`
-- `toEnhancer`
+- `createEnhancer`
 
 First, in your render method use `renderChildren`:
 
@@ -29,10 +29,26 @@ class MyData extends Component {
 Second, create enhancer out of your component:
 
 ```js
-const withData = toEnhancer(MyData, 'data');
+const withData = createEnhancer(MyData, 'data');
 ```
 
 Done!
+
+
+## Installation
+
+<pre>
+npm i <a href="https://www.npmjs.com/package/react-universal-interface">react-universal-interface</a> --save
+</pre>
+
+
+## Usage
+
+Import each utility individually to decrease your bundle size
+
+```js
+import {renderChildren, createEnhancer} from 'react-universal-interface';
+```
 
 
 ## License
