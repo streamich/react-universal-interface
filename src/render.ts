@@ -72,7 +72,7 @@ const render = (props, data, ...more) => {
         }
     }
 
-    return children;
+    return children || null;
 };
 
 export default render;
