@@ -13,12 +13,6 @@ describe('render()', () => {
         mount(<Parent>foobar</Parent>);
     });
 
-    it('crashes when nothing to render', () => {
-        expect(() => {
-            mount(<Parent/>);
-        }).toThrow();
-    });
-
     it('supports render prop interface', () => {
         const wrapper = mount(<Parent render={(state) => {
             expect(state).toEqual({foo: 'bar'});
