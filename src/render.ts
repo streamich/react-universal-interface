@@ -3,7 +3,7 @@ import {createElement as h, cloneElement, version} from 'react';
 const isReact16Plus = parseInt(version.substr(0, version.indexOf('.'))) > 15;
 const isFn = fn => typeof fn === 'function';
 
-const render = (props, data) => {
+const render = (props, data, ...more) => {
     if (process.env.NODE_ENV !== 'production') {
         if (typeof props !== 'object') {
             throw new TypeError('renderChildren(props, data) first argument must be a props object.');
@@ -30,7 +30,7 @@ const render = (props, data) => {
 
     const {render, children = render, component, comp = component} = props;
 
-    if (isFn(children)) return children(data);
+    if (isFn(children)) return children(data, ...more);
 
     if (comp) {
         if (process.env.NODE_ENV !== 'production') {
