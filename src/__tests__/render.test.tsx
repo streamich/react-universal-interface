@@ -2,7 +2,7 @@ import {createElement as h} from 'react';
 import render from '../render';
 import {mount} from 'enzyme';
 
-const Parent = (props) => render(props, {foo: 'bar'});
+const Parent = (props) => render(props, {foo: 'bar'}, 'extra1', 'extra2');
 
 describe('render()', () => {
     it('exists', () => {
@@ -39,6 +39,17 @@ describe('render()', () => {
         );
 
         expect(wrapper.html()).toBe('<div>bar</div>');
+    });
+
+    it('supports multiple arguments for render props', () => {
+        const wrapper = mount(
+            <Parent>{(state, arg1, arg2) => {
+                expect(arg1).toBe('extra1');
+                expect(arg2).toBe('extra2');
+
+                return <div>...</div>;
+            }}</Parent>
+        );
     });
 
     it('supports component prop interface', () => {
