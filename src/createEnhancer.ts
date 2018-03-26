@@ -21,7 +21,7 @@ const createEnhancer = (Facc, prop?: string, wrapper = noWrap) => {
             h(Facc, faccProps, (state) => wrapper(Comp, propName, props, state));
 
         if (process.env.NODE_ENV !== 'production') {
-            (Facc as any).displayName = `${Facc.displayName || Facc.name}(${Comp.displayName || Comp.name})`;
+            (Enhanced as any).displayName = `${Facc.displayName || Facc.name}(${Comp.displayName || Comp.name})`;
         }
 
         return isClassDecoratorMethodCall ? addClassDecoratorSupport(Enhanced) : Enhanced;
