@@ -1,4 +1,4 @@
-import {createElement as h} from 'react';
+import * as React from 'react';
 import {renderToString} from 'react-dom/server';
 import {expect} from 'chai';
 import render from '../render';

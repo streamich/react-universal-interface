@@ -1,5 +1,7 @@
-import {createElement as h} from 'react';
+import * as React from 'react';
 import addClassDecoratorSupport from './addClassDecoratorSupport';
+
+const h = React.createElement;
 
 const noWrap = (Comp, propName, props, state) => h(Comp, propName ?
   {[propName]: state, ...props} :

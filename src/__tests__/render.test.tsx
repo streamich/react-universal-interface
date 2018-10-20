@@ -1,4 +1,4 @@
-import {createElement as h} from 'react';
+import * as React from 'react';
 import render from '../render';
 import {mount} from 'enzyme';
 

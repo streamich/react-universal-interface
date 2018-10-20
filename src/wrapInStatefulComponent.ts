@@ -1,7 +1,7 @@
-import {Component} from 'react';
+import * as React from 'react';
 
 const wrapInStatefulComponent = (Comp) => {
-    const Decorated = class extends Component<any, any> {
+    const Decorated = class extends React.Component<any, any> {
         render () {
             return Comp(this.props, this.context);
         }

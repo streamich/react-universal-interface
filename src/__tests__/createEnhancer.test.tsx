@@ -1,4 +1,4 @@
-import {createElement as h, Component} from 'react';
+import * as React from 'react';
 import render from '../render';
 import createEnhancer from '../createEnhancer';
 import {mount} from 'enzyme';
@@ -7,14 +7,14 @@ const Parent = (props) => render(props, {foo: 'bar' + (props.extra || '')});
 const withParent = createEnhancer(Parent, 'parent');
 
 @withParent
-class Decorator1 extends Component<any, any> {
+class Decorator1 extends React.Component<any, any> {
     render () {
         return <div>{this.props.parent.foo}</div>;
     }
 }
 
 @withParent('custom')
-class Decorator2 extends Component<any, any> {
+class Decorator2 extends React.Component<any, any> {
     render () {
         return <div>{this.props.custom.foo}</div>;
     }
@@ -22,7 +22,7 @@ class Decorator2 extends Component<any, any> {
 
 
 @withParent('', {extra: '.extra'})
-class Decorator3 extends Component<any, any> {
+class Decorator3 extends React.Component<any, any> {
     render () {
         return <div>{this.props.parent.foo}</div>;
     }
