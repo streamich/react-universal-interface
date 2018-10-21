@@ -1,5 +1,34 @@
 # react-universal-interface
 
+Easily create a component which is render-prop, Function-as-a-child and component-prop.
+
+```js
+import {render} from 'react-univerdal-interface';
+
+class MyData extends React.Component {
+    render () {
+        return render(this.props, this.state);
+    }
+}
+```
+
+Now you can use it:
+
+```jsx
+<MyData render={(state) =>
+    <MyChild {...state} />
+} />
+
+<MyData>{(state) =>
+    <MyChild {...state} />
+}</MyData>
+
+<MyData comp={MyChild} />
+<MyData component={MyChild} />
+```
+
+---
+
 [![][npm-badge]][npm-url] [![][travis-badge]][travis-url] [![React Universal Interface](https://img.shields.io/badge/React-Universal%20Interface-green.svg)](https://github.com/streamich/react-universal-interface)
 
 Use this badge if you support universal interface:
@@ -109,6 +138,24 @@ Returns a component enhancer `enhancer(Comp, propName, faccProps)` that receives
 - `Comp` &mdash; required, component to be enhanced.
 - `propName` &mdash; optional, string, name of the injected prop.
 - `faccProps` &mdash; optional, props to provide to the FaCC component.
+
+
+## TypeScript
+
+TypeScript users can add typings to their render-prop components.
+
+```ts
+import {UniversalProps} from 'react-universal-interface';
+
+interface Props extends UniversalProps<State> {
+}
+
+interface State {
+}
+
+class MyData extends React.Component<Props, State> {
+}
+```
 
 
 ## License
