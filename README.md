@@ -3,7 +3,7 @@
 Easily create a component which is render-prop, Function-as-a-child and component-prop.
 
 ```js
-import {render} from 'react-univerdal-interface';
+import {render} from 'react-universal-interface';
 
 class MyData extends React.Component {
     render () {
