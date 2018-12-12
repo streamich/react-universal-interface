@@ -50,7 +50,7 @@ const render = (props, data, ...more) => {
 
     if (children && (children instanceof Object)) {
         if (process.env.NODE_ENV !== 'production') {
-            if (!children.type || ((typeof children.type !== 'string') && (typeof children.type !== 'function'))) {
+            if (!children.type || ((typeof children.type !== 'string') && (typeof children.type !== 'function') && (typeof children.type !== 'symbol'))) {
                 console.warn(
                     'Universal component interface received object as children, ' +
                     'expected React element, but received unexpected React "type".'
