@@ -71,7 +71,7 @@ all the below usage patterns:
 </MyData>
 
 // Higher Order Component (HOC)
-const ChildWitData = withData(Child);
+const ChildWithData = withData(Child);
 
 // Decorator
 @withData
