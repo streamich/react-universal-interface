@@ -1,5 +1,6 @@
 import render from './render';
 import createEnhancer from './createEnhancer';
+import hookToRenderProp from './hookToRenderProp';
 
 export interface UniversalProps<Data> {
     children?: ((data: Data) => React.ReactNode) | React.ReactNode;
@@ -11,4 +12,5 @@ export interface UniversalProps<Data> {
 export {
     render,
     createEnhancer,
+    hookToRenderProp,
 };
