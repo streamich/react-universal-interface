@@ -24,29 +24,29 @@
     "react": "*"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.6",
-    "@types/jest": "^23.3.5",
-    "@types/node": "^10.12.0",
-    "@types/react": "^16.4.18",
-    "@types/react-dom": "^16.0.9",
-    "chai": "4.1.2",
-    "enzyme": "3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "3.3.0",
-    "jest": "22.1.2",
-    "jest-environment-jsdom": "^22.1.4",
-    "jest-environment-jsdom-global": "^1.0.3",
-    "jest-tap-reporter": "1.9.0",
-    "mocha": "5.0.0",
-    "mol-conventional-changelog": "1.2.0",
-    "react-test-renderer": "16.2.0",
-    "rimraf": "^2.6.2",
-    "ts-jest": "^23.10.4",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.3",
-    "semantic-release": "^15.10.4",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "@types/chai": "^4.1.7",
+    "@types/jest": "^24.0.11",
+    "@types/node": "^11.13.0",
+    "@types/react": "^16.8.13",
+    "@types/react-dom": "^16.8.3",
+    "chai": "^4.2.0",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^24.7.1",
+    "jest-environment-jsdom": "^24.7.1",
+    "jest-environment-jsdom-global": "^1.2.0",
+    "jest-tap-reporter": "^1.9.0",
+    "mocha": "^6.1.1",
+    "mol-conventional-changelog": "^1.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6",
+    "rimraf": "^2.6.3",
+    "semantic-release": "^15.13.3",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.2"
   },
   "config": {
     "commitizen": {
@@ -61,7 +61,7 @@
       "jsx"
     ],
     "transform": {
-      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+      "^.+\\.tsx?$": "ts-jest"
     },
     "transformIgnorePatterns": [],
     "testRegex": ".*/__tests__/.*\\.(test|spec)\\.(jsx?|tsx?)$",
