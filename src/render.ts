@@ -66,9 +66,7 @@ const render = (props, data, ...more) => {
             if (typeof children.type === 'string')
                 return children;
 
-            Object.assign(children.props, data);
-
-            return children;
+            return cloneElement(children, Object.assign({}, children.props, data));
         }
     }
 
