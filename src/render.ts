@@ -33,15 +33,6 @@ const render = (props, data, ...more) => {
     if (isFn(children)) return children(data, ...more);
 
     if (comp) {
-        if (process.env.NODE_ENV !== 'production') {
-            if (!isFn(comp)) {
-                throw new TypeError(
-                    'Universal children definition expected "comp" or "component" prop ' +
-                    `to be of a React component type, received typeof "${typeof comp}".`
-                );
-            }
-        }
-
         return h(comp, data);
     }
 
