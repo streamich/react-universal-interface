@@ -73,6 +73,7 @@
     "testEnvironment": "jest-environment-jsdom-global",
     "testURL": "http://localhost"
   },
+  "license": "Unlicense",
   "keywords": [
     "react",
     "universal",
